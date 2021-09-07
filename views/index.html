@@ -1,0 +1,64 @@
+<%-include('header.html') %>
+<div class="t-msg">
+  <div class="t-wp cl">
+    <% if(t.href){%><a href="<%=url %>/">返回首页</a><i class="layui-icon layui-icon-next"></i><a href="<%=url %>/<%=t.href %>"><%=t.name %></a><%} else {%><span>您的位置</span><i class="layui-icon layui-icon-next"></i><a href="<%=url %>/">网站首页</a><%}%>
+  </div>
+</div>
+
+
+
+
+<div class="t-list">
+	<div class="t-wp cl">
+		<ul class="t-ul">
+      <% data.forEach(function(item){%>
+      <li <% if(item.pic){%>style="padding-bottom:30px"<%}%>>
+        <div class="t-b">
+          <h3 class="t-cl"><a href="<%=url %>/<%=item._id %>"><%=item.title %></a></h3>
+          <div class="t-a">
+            <% if(item.c_pic){%>
+            <img src="<%- common.getPic(item.c_pic) %>">
+            <%} else {%>
+            <img src="<%=url %>/0.png">
+            <%}%>
+          </div>
+          <% if(item.pic){%>
+          <div class="t-e"><img src="<%- common.getPic(item.pic[0]) %>"></div>
+          <%}%>
+        </div>
+				<div <% if(item.pic){%>class="t-d"<%}%>>
+          <p class="t-cl t-cl-3"><%=item.description %></p>
+        </div>
+        <div class="t-f t-cl">
+          <% if(item.hot){%><span class="t-btn">推荐</span><%}%><span><a href="<%=url %>/<%=item.route %>"><%=item.name %></a></span><span>最后发表：<%- common.getTime(item._updateTime) %></span>
+        </div>
+			</li>
+			<% }) %>
+		</ul>
+  </div>
+</div>
+<div class="t-wp cl">
+  <div id="t-page" class="cl"></div>
+</div>
+<script>
+layui.use(['laypage', 'layer'], function(){
+  var laypage = layui.laypage
+  ,layer = layui.layer
+  ,jq = layui.jquery;
+  laypage.render({
+    elem: 't-page'
+    ,count: '<%=t.count.total %>'
+    ,limit: '<%=t.limit %>'
+    ,curr: '<%=t.page %>'
+    ,theme: '#1E9FFF'
+    ,first: false
+    ,last: false
+    ,jump: function(obj,first){
+      if (!first) {
+        window.location.href = '<%=url %>/<%=t.href %>'+obj.curr
+      }
+    }
+  });
+});
+</script>
+<%-include('footer.html') %>

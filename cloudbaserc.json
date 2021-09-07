@@ -1,0 +1,16 @@
+{
+    "envId": "{{envId}}",
+    "framework": {
+        "name": "featblog",
+        "plugins": {
+            "koa": {
+                "use": "@cloudbase/framework-plugin-node",
+                "inputs": {
+                    "name": "featblog",
+                    "path": "/featblog",
+                    "entry": "app.js"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<%-include('header.html') %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor@3.5.4/dist/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor@3.5.4/dist/js/highlight.js/styles/github.css">
+<div class="t-msg">
+  <div class="t-wp cl">
+  <a href="<%=url %>/">返回首页</a><i class="layui-icon layui-icon-next"></i><a href="<%=url %>/<%=data[0]._id %>">内容详情</a>
+  </div>
+</div>
+<div class="t-list">
+	<div class="t-wp cl">
+		<div class="t-ul">
+		  <div class="t-li">
+				<div class="t-b">
+					<h2 class="t-cl"><a href="<%=url %>/<%=data[0]._id %>"><%=data[0].title %></a></h2>
+					<div class="t-a">
+						<% if(data[0].c_pic){%>
+						<img src="<%- common.getPic(data[0].c_pic) %>">
+						<%} else {%>
+						<img src="<%=url %>/0.png">
+						<%}%>
+					</div>
+				</div>
+				<div class="t-f">
+					<% if(data[0].hot){%><span class="t-btn">推荐</span><%}%><span><a href="<%=url %>/<%=data[0].route %>"><%=data[0].name %></a></span><span>最后发表：<%- common.getTime(data[0]._updateTime) %></span>
+				</div>
+			</div>
+			<div class="vditor-reset"><%- common.getCon(data[0].content) %></div>
+            <div class="t-tag">
+			<% if(data[0].keywords){%>
+				<% data[0].keywords.forEach(function(item){%>
+				<a href="<%=url %>/<%=item %>"><%=item %></a>
+				<% }) %>
+			<%}%>
+			</div>
+		</div>
+  </div>
+</div>
+<%-include('footer.html') %>

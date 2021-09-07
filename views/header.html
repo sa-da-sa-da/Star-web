@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%=t.title %></title>
+  <meta name="keywords" content="<%=t.keywords %>">
+  <meta name="description" content="<%=t.description %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="<%=url %>/favicon.ico" rel="shortcut icon">
+  <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+  <link rel="stylesheet" href="<%=url %>/style.css">
+  <script src="https://www.layuicdn.com/layui/layui.js"></script>
+</head>
+
+<body>
+  <div class="t-header" <% if(t.banner){%>style="background: url('<%- common.getPic(t.banner[0]) %>') repeat 0 0" <%}%>>
+  <div class="t-wp cl">
+      <div class="t-head">
+      <a href="<%=url %>/<%=t.href %>"> <% if(t.logo){%> <img src="<%- common.getPic(t.logo) %>">
+    <%} else {%>
+    <img src="<%=url %>/0.png">
+    <%}%>
+      </a>
+      <h1><%=t.name %></h1>
+    <h2><%=t.msg %></h2>
+  </div>
+  <ul class="t-nav cl">
+    <% nav.data.forEach(function(item){%>
+    <li>
+      <a <% if(t.name == item.name){%>class="a" <%}%> href="<%=url %>/<%=item.route %>"> <h3
+        class="t-cl"><i>#</i><%=item.name %></h3>
+        <p class="t-cl"><%=item.c_description %></p>
+        <span class="t-no">
+          <% if(item.c_pic){%>
+          <img src="<%- common.getPic(item.c_pic) %>">
+          <%} else {%>
+          <img src="<%=url %>/0.png">
+          <%}%>
+      </span>
+      </a>
+      </li>
+      <% }) %>
+  </ul>
+  </div>
+  </div>

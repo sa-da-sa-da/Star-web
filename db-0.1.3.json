@@ -1,0 +1,228 @@
+[
+  {
+    "fields": [
+      {
+        "displayName": "标题",
+        "id": "featblog160286397801",
+        "name": "title",
+        "order": 0,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "关键词",
+        "id": "featblog160286397802",
+        "name": "keywords",
+        "order": 1,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "描述",
+        "id": "featblog160286397803",
+        "name": "description",
+        "order": 2,
+        "type": "MultiLineString",
+        "isRequired": true
+      },
+      {
+        "displayName": "LOGO",
+        "id": "featblog160286397804",
+        "name": "logo",
+        "order": 3,
+        "type": "Image",
+        "isRequired": true
+      },
+      {
+        "displayName": "名称",
+        "id": "featblog160286397805",
+        "name": "name",
+        "order": 4,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "简介",
+        "id": "featblog160286397806",
+        "name": "msg",
+        "order": 5,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "横幅",
+        "id": "featblog160286397808",
+        "name": "banner",
+        "order": 6,
+        "type": "Image",
+        "isMultiple": true
+      },
+      {
+        "displayName": "置顶数",
+        "id": "featblog160286397828",
+        "name": "top",
+        "order": 7,
+        "type": "Number",
+        "isRequired": true
+      },
+      {
+        "displayName": "推荐数",
+        "id": "featblog160286397829",
+        "name": "hot",
+        "order": 8,
+        "type": "Number",
+        "isRequired": true
+      },
+      {
+        "displayName": "主题分页",
+        "id": "featblog160286397807",
+        "name": "limit",
+        "order": 9,
+        "type": "Number",
+        "isRequired": true
+      },
+      {
+        "displayName": "标签",
+        "id": "featblog160286397809",
+        "name": "tag",
+        "order": 10,
+        "type": "Array"
+      }
+    ],
+    "collectionName": "feat-blog-config",
+    "displayName": "站点配置",
+    "_id": "featblog160286397825"
+  },
+  {
+    "fields": [
+      {
+        "displayName": "名称",
+        "id": "featblog160286397810",
+        "name": "name",
+        "order": 0,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "路由",
+        "id": "featblog160286397811",
+        "name": "route",
+        "order": 1,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "简介",
+        "id": "featblog160286397812",
+        "name": "c_description",
+        "order": 2,
+        "type": "MultiLineString"
+      },
+      {
+        "displayName": "配图",
+        "id": "featblog160286397813",
+        "name": "c_pic",
+        "order": 3,
+        "type": "Image"
+      },
+      {
+        "displayName": "排序",
+        "id": "featblog160286397814",
+        "name": "c_order",
+        "order": 4,
+        "type": "Number",
+        "isRequired": true,
+        "defaultValue": 9
+      }
+    ],
+    "collectionName": "feat-blog-forum",
+    "displayName": "站点分类",
+    "_id": "featblog160286397826"
+  },
+  {
+    "fields": [
+      {
+        "displayName": "标题",
+        "id": "featblog160286397815",
+        "name": "title",
+        "order": 0,
+        "type": "String",
+        "isRequired": true
+      },
+      {
+        "displayName": "分类",
+        "id": "featblog160286397816",
+        "name": "c_id",
+        "order": 1,
+        "type": "Connect",
+        "isRequired": true,
+        "connectField": "name",
+        "connectResource": "featblog160286397826"
+      },
+      {
+        "displayName": "排序",
+        "id": "featblog160286397817",
+        "name": "order",
+        "order": 2,
+        "type": "Number",
+        "isRequired": true,
+        "defaultValue": 9
+      },
+      {
+        "displayName": "关键词",
+        "id": "featblog160286397818",
+        "name": "keywords",
+        "order": 3,
+        "type": "Array"
+      },
+      {
+        "displayName": "简介",
+        "id": "featblog160286397819",
+        "name": "description",
+        "order": 4,
+        "type": "MultiLineString"
+      },
+      {
+        "displayName": "配图",
+        "id": "featblog160286397820",
+        "name": "pic",
+        "order": 5,
+        "type": "Image",
+        "isMultiple": true
+      },
+      {
+        "displayName": "内容",
+        "id": "featblog160286397821",
+        "name": "content",
+        "order": 6,
+        "type": "Markdown"
+      },
+      {
+        "displayName": "浏览量",
+        "id": "featblog160286397822",
+        "name": "pv",
+        "order": 7,
+        "type": "Number",
+        "isRequired": true,
+        "defaultValue": 1
+      },
+      {
+        "displayName": "置顶",
+        "id": "featblog160286397823",
+        "name": "top",
+        "order": 8,
+        "type": "Boolean"
+      },
+      {
+        "displayName": "推荐",
+        "id": "featblog160286397824",
+        "name": "hot",
+        "order": 9,
+        "type": "Boolean"
+      }
+    ],
+    "collectionName": "feat-blog-thread",
+    "displayName": "站点文章",
+    "_id": "featblog160286397827"
+  }
+]
